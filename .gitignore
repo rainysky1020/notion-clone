@@ -1,0 +1,27 @@
+# v0 sandbox internal files
+__v0_runtime_loader.js
+__v0_devtools.tsx
+__v0_jsx-dev-runtime.ts
+.snowflake/
+.v0-trash/
+.vercel/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+.env*.local
+
+# MCP secrets (토큰이 포함될 수 있음)
+.cursor/mcp.local.json
+
+# Database (legacy — removed)
+prisma/dev.db
+prisma/dev.db-journal
+
+# Supabase migrations tracked in supabase/migrations/
+
+# Common ignores
+node_modules
+.next/
+.DS_Store

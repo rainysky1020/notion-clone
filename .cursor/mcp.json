@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "supabase": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "dotenv-cli",
+        "-e",
+        "c:/Cursorstudy/notion_clone/.env.local",
+        "--",
+        "npx",
+        "-y",
+        "@supabase/mcp-server-supabase@latest",
+        "--project-ref=dpvotxgugyasbswiizif"
+      ]
+    }
+  }
+}
