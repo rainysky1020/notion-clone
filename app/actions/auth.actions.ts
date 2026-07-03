@@ -3,8 +3,8 @@
 import { redirect } from "next/navigation"
 import { getAuthProvider } from "@/lib/auth"
 
-export async function signInWithGoogleAction() {
-  const result = await getAuthProvider().signInWithGoogle()
+export async function signInWithGoogleAction(requestOrigin: string) {
+  const result = await getAuthProvider().signInWithGoogle(requestOrigin)
   return result
 }
 

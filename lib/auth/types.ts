@@ -9,7 +9,7 @@ export type Session = {
 }
 
 export type AuthProvider = {
-  signInWithGoogle(): Promise<{ url?: string; error?: string }>
+  signInWithGoogle(requestOrigin?: string): Promise<{ url?: string; error?: string }>
   signOut(): Promise<void>
   getSession(): Promise<Session | null>
 }

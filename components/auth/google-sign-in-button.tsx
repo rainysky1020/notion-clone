@@ -19,7 +19,7 @@ export function GoogleSignInButton() {
         onClick={() => {
           setError(null)
           startTransition(async () => {
-            const result = await signInWithGoogleAction()
+            const result = await signInWithGoogleAction(window.location.origin)
             if (result?.error) {
               setError(result.error)
               return

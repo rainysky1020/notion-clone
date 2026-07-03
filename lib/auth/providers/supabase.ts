@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server"
+import { resolveRedirectOrigin } from "@/lib/auth/redirect-origin"
 import type { AuthProvider, Session } from "./types"
 
 export class SupabaseAuthProvider implements AuthProvider {
@@ -25,9 +26,9 @@ export class SupabaseAuthProvider implements AuthProvider {
     }
   }
 
-  async signInWithGoogle(): Promise<{ url?: string; error?: string }> {
+  async signInWithGoogle(requestOrigin?: string): Promise<{ url?: string; error?: string }> {
     const supabase = await createClient()
-    const origin = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+    const origin = resolveRedirectOrigin(requestOrigin)
 
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "google",
